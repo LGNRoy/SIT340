@@ -66,39 +66,32 @@
                 context.stroke();
                 coordinate.innerHTML = e.x+':'+e.y;
                 cset.push(coordinate.innerHTML);
-                clist.innerHTML = cset.join(',');
+                clist.innerHTML = cset.join(', ');
               }
 
             }, false);
 
-            // pad.addEventListener('mouseout', function(){
-            //   isMouseDown = false;
-            // });
-            //
-            // pad.addEventListener('mousedown', function(){
-            //   isMouseDown = true;
-            // });
-            //
-            // pad.addEventListener('mouseup', function(){
-            //   isMouseDown = false;
-            // });
-
-            window.addEventListener()('mousedown', function(){
-              isMouseDown = true;
-            });
-            window.addEventListener()('mouseup', function(){
-              isMouseDown = false;
-            });
-
-            pad.addEventListener('mousein', function(){
+            pad.addEventListener('mouseover', function(){
               isInPad = true;
+              // console.log("isInPad: true");
             });
+
             pad.addEventListener('mouseout', function(){
+              isInPad = false;
+              // console.log("isInPad: false");
+            });
+
+            window.addEventListener('mousedown', function(){
+              isMouseDown = true;
+              // console.log("mousedown: false");
+            });
+
+            window.addEventListener('mouseup', function(){
               isMouseDown = false;
+              // console.log("mousedown: true");
             });
 
             reset.addEventListener('click',function(){
-
                 fixSize();
                 cset = [];
                 clist.innerHTML = '';
