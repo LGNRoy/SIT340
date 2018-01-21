@@ -1,5 +1,10 @@
 .scraptcha {
-  background-color: #DFDFDF;
-  width: 420px;
-  height: 100px
+  /* background-color: #DFDFDF; */
+  height: 78px;
+  background:url("../img/BotDetectCaptcha.jpg") no-repeat;
+
+}
+
+.mask {
+  z-index: 2;
 }
